@@ -1,3 +1,4 @@
+
 # 🃏 Jogo de Buraco em C#
 
 Este projeto é uma implementação básica do clássico jogo de cartas **Buraco**, desenvolvido em C#. Ele fornece a estrutura principal para gerenciar jogadores, baralho e turnos, servindo como base para criar um jogo completo.
