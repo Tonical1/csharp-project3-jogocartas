@@ -1,32 +1,37 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace Game
 {
+    public enum CardType
+    {
+        Ouros,
+        Copas,
+        Espadas,
+        Paus
+    }
+
+    public class Card
+    {
+        public string Valor { get; set; }
+        public CardType Naipe { get; set; }
+    }
+
     public class Core
     {
+        public static int MinPlayers = 2;
+        public static int MaxPlayers = 4;
+
         public List<string> Players = new List<string>();
-        public void AddPlayer(string name)
-        {
-            if (Players.Count < MaxPlayers)
-            {
-                Players.Add(name);
-            } else
-            {
-                Console.WriteLine("Numero de playerrs maximo");
-            };
+
+        public List<Card> Deck = new List<Card>();
+        public void BuildDeck() { 
+                
         }
 
-        public List<string> CardTypes = new List<string>()
-        {
-            "Diamonds",
-            "Hearts",
-            "Spades",
-            "Clubs",
-        };
+        public Dictionary<string, List<Card>> Hands = new Dictionary<string, List<Card>>();
+
+        public List<Card> DiscardPile = new List<Card>();
 
         public static Dictionary<string, int> CardValues = new Dictionary<string, int>
         {
@@ -43,29 +48,18 @@ namespace Game
             { "J", 11 },
             { "Q", 12 },
             { "K", 13 },
-            { "JK", 0 }
+            { "Coringa", 0 }
         };
-
-        public static int MinPlayers = 2;
-        public static int MaxPlayers = 4;
 
         private int playerTurn = 1;
         public int PlayerTurn
         {
-            get { return playerTurn; }
-            set { playerTurn = Math.Clamp(value,1,Players.Count); }
+            get => playerTurn;
+            set => playerTurn = value;
         }
-
-        public List<string> Deck { get; private set; } = new List<string>();
-        public void BuildDeck()
-        {
-
-        }
-
-        public void NextTurn()
-        {
+        public void NextTurn() {
             PlayerTurn++;
-            if (PlayerTurn > Players.Count) PlayerTurn = 1;
+            if (PlayerTurn > Players.Count) PlayerTurn = 1; 
         }
     }
 }
