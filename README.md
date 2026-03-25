@@ -4,34 +4,37 @@
 
 ## Victor Freire - RM: 556191
 
-# 🃏 Jogo de Buraco em C#
+# 🎴 Jogo da Cartas (Canastras)
 
-Este projeto é uma implementação básica do clássico jogo de cartas **Buraco**, desenvolvido em C#. Ele fornece a estrutura principal para gerenciar jogadores, baralho e turnos, servindo como base para criar um jogo completo.
+Esta biblioteca é uma implementação básica para jogos de cartas em C#. Ela fornece a estrutura principal para gerenciar cartas, jogadores, baralho e turnos, servindo como base para criar diferentes tipos de jogos.
 
 ---
 
 ## ⚙️ Funcionalidades
 
+* **Representação de cartas**
+  Cada carta possui um valor (**A, 2–10, J, Q, K, Coringa**) e um naipe (**Ouros, Copas, Espadas, Paus**).
+
+* **Estrutura de baralho**
+  Contém todas as cartas do jogo e serve como base para compra e distribuição.
+
 * **Gerenciamento de jogadores**
-  Permite adicionar de 2 a 4 jogadores, garantindo que o número mínimo e máximo seja respeitado.
+  Permite armazenar os jogadores da partida, com suporte de **2 a 4 participantes**.
 
-* **Cartas e baralho**
+* **Mãos dos jogadores**
+  Cada jogador possui sua própria coleção de cartas durante o jogo.
 
-  * Naipes: **Diamonds, Hearts, Spades, Clubs**
-  * Valores: **A (1) até K (13) + Joker (0)**
-  * Estrutura preparada para criar, embaralhar e distribuir cartas.
+* **Pilha de descarte**
+  Armazena as cartas que já foram utilizadas ao longo da partida.
 
 * **Controle de turno**
-  Mantém o jogador atual e permite avançar o turno de forma circular entre todos os participantes.
+  Mantém o jogador atual e avança de forma sequencial entre todos os participantes.
 
-* **Limite de jogadores**
-  O jogo suporta de 2 a 4 jogadores por partida.
+* **Valores das cartas**
+  Define um valor numérico para cada carta, permitindo comparação ou cálculo de pontuação.
 
 ---
 
-## 📦 Estrutura do projeto
-
-A classe principal do jogo é responsável por:
 
 * Gerenciar a lista de jogadores.
 * Controlar o turno atual de cada jogador.
