@@ -1,21 +1,24 @@
-﻿using Game;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-namespace GameInfo.ClassLib
+﻿namespace GameLib.ClassLib
 {
-    internal class Card
+    public class Card
     {
-        public string Value { get; }
+
+        public string Name { get; }
         public CardType Type { get; }
 
-        public Card(string value, CardType type)
+        public Card(string name, CardType type)
         {
-            Value = value;
+            Name = name;
             Type = type;
         }
+    }
+
+    public enum CardType
+    {
+        Nenhum,
+        Ouros,
+        Copas,
+        Espadas,
+        Paus
     }
 }

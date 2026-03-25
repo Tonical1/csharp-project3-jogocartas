@@ -1,13 +1,6 @@
-﻿using Game;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-namespace GameInfo.ClassLib
+﻿namespace GameLib.ClassLib
 {
-    internal class Player
+    public class Player
     {
         public string Name { get; }
         public List<Card> Deck { get; } = new List<Card>();

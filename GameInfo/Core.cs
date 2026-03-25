@@ -1,19 +1,13 @@
-﻿using GameInfo;
-using GameInfo.ClassLib;
-using System;
-using System.Collections.Generic;
-
-namespace Game
+﻿using GameLib.ClassLib;
+using GameLib.Components;
+namespace GameLib
 {
     public class Core
     {
-        PlayerManager playerManager = new PlayerManager();
-        //public List<;> discardPile = new List<Card>();
-        public Card Card = new Card();
+        private PlayerList playerList = new PlayerList();
+        private List<Card> discardPile = new List<Card>();
 
-        public Core()
-        {
-            // Começar o jogo aqui talvez
-        }
+        public List<Card> DiscardPile { get => discardPile;}
+        public PlayerList PlayerList { get => playerList; }
     }
 }

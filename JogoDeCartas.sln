@@ -5,7 +5,7 @@ VisualStudioVersion = 17.14.36109.1
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "JogoDeCartas", "JogoDeCartas\JogoDeCartas.csproj", "{E5C78FBE-316E-4120-B87A-52E75B5EB38F}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GameInfo", "GameInfo\GameInfo.csproj", "{E948E4B6-6F9B-42B7-960F-4523A6A44853}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GameLib", "GameInfo\GameLib.csproj", "{E948E4B6-6F9B-42B7-960F-4523A6A44853}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
