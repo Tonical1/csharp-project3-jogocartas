@@ -28,29 +28,14 @@
         /// </summary>
         private void InitializeComponent()
         {
-            panel1 = new Panel();
             label1 = new Label();
-            panel1.SuspendLayout();
             SuspendLayout();
-            // 
-            // panel1
-            // 
-            panel1.AutoSize = true;
-            panel1.Controls.Add(label1);
-            panel1.Dock = DockStyle.Fill;
-            panel1.ImeMode = ImeMode.Off;
-            panel1.Location = new Point(0, 0);
-            panel1.Margin = new Padding(90);
-            panel1.Name = "panel1";
-            panel1.Padding = new Padding(500);
-            panel1.Size = new Size(696, 450);
-            panel1.TabIndex = 0;
-            panel1.Paint += panel1_Paint;
             // 
             // label1
             // 
             label1.AutoSize = true;
-            label1.Location = new Point(323, 233);
+            label1.Dock = DockStyle.Fill;
+            label1.Location = new Point(0, 0);
             label1.Name = "label1";
             label1.Size = new Size(38, 15);
             label1.TabIndex = 0;
@@ -63,20 +48,17 @@
             AutoSizeMode = AutoSizeMode.GrowAndShrink;
             BackColor = SystemColors.ButtonHighlight;
             ClientSize = new Size(696, 450);
-            Controls.Add(panel1);
+            Controls.Add(label1);
             ForeColor = Color.Black;
             Name = "Form1";
             StartPosition = FormStartPosition.CenterScreen;
             Text = "Jogo de cartas buraco";
-            panel1.ResumeLayout(false);
-            panel1.PerformLayout();
             ResumeLayout(false);
             PerformLayout();
         }
 
         #endregion
 
-        private Panel panel1;
         private Label label1;
     }
 }
