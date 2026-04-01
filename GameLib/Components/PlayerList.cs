@@ -4,14 +4,14 @@ namespace GameLib.Components
 {
     public class PlayerList
     {
-        private List<Player> playerList = new List<Player>();
+        private List<Player> playerList = [];
         public List<Player> Playing { get { return playerList; } }
 
         public static int MinPlayers = 2;
         public static int MaxPlayers = 4;
         public bool AddPlayer(Player player)
         {
-            if (!playerList.Exists(Target => Target.Name == player.Name) && playerList.Count<=MaxPlayers)
+            if (!playerList.Exists(Target => Target.Name == player.Name) && playerList.Count <= MaxPlayers)
             {
                 playerList.Add(player);
                 return true;

@@ -7,7 +7,7 @@ namespace GameLib
         private PlayerList playerList = new PlayerList();
         private List<Card> discardPile = [];
 
-        public List<Card> DiscardPile { get => discardPile;}
+        public List<Card> DiscardPile { get => discardPile; }
         public PlayerList PlayerList { get => playerList; }
     }
 }
