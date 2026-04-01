@@ -3,13 +3,16 @@
     public class Card
     {
 
+        private string name = "";
+        private CardType type = 0;
+
         public string Name { get; }
         public CardType Type { get; }
 
-        public Card(string name, CardType type)
+        public Card(string pName, CardType pType)
         {
-            Name = name;
-            Type = type;
+            name = pName;
+            type = pType;
         }
     }
 

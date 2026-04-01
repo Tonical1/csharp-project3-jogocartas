@@ -5,7 +5,7 @@ namespace GameLib.Components
     public class PlayerList
     {
         private List<Player> playerList = new List<Player>();
-        public IReadOnlyList<Player> GetPlayers() => playerList.AsReadOnly();
+        public List<Player> Playing { get { return playerList; } }
 
         public static int MinPlayers = 2;
         public static int MaxPlayers = 4;
