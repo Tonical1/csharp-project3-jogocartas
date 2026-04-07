@@ -1,8 +1,8 @@
 ﻿using Microsoft.Web.WebView2.WinForms;
 using System;
-using System.Diagnostics;
 using System.IO;
 using System.Windows.Forms;
+using GameLib;
 
 namespace Application
 {
@@ -12,7 +12,7 @@ namespace Application
 
         public Root()
         {
-            this.Text = "Meu App WebView2";
+            this.Text = "Jogo das Canastras";
             this.Width = 1000;
             this.Height = 600;
 
@@ -25,26 +25,24 @@ namespace Application
             {
                 Dock = DockStyle.Fill
             };
-
             Controls.Add(webView);
 
             await webView.EnsureCoreWebView2Async(null);
+            webView.CoreWebView2.AddHostObjectToScript("game", new Core());
 
-            // Caminho para seu HTML
-            string htmlPath = Path.Combine(AppDomain.CurrentDomain.BaseDirectory, "index.html");
+            // Caminho físico para a pasta do projeto
+            string projectDir = AppDomain.CurrentDomain.BaseDirectory;
 
-            string exeFolder = AppDomain.CurrentDomain.BaseDirectory;
-            Process.Start(new ProcessStartInfo()
-            {
-                FileName = exeFolder,
-                UseShellExecute = true,
-                Verb = "open"
-            }); 
+            // Registra a pasta virtual "app" para acessar arquivos locais
+            webView.CoreWebView2.SetVirtualHostNameToFolderMapping(
+                "app.local",           // host virtual
+                projectDir,            // pasta física
+                Microsoft.Web.WebView2.Core.CoreWebView2HostResourceAccessKind.Allow
+            );
 
-            if (File.Exists(htmlPath))
-                webView.CoreWebView2.Navigate(htmlPath);
-            else
-                webView.NavigateToString("<h1>HTML NÃO ENCONTRADO</h1>");
+            // Agora podemos navegar usando URL virtual
+            string url = "https://app.local/index.html";
+            webView.CoreWebView2.Navigate(url);
         }
     }
 }
