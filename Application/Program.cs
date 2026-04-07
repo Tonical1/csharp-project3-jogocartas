@@ -1,7 +1,4 @@
-using System;
-using System.Windows.Forms;
-
-namespace Application
+﻿namespace Application
 {
     internal static class Program
     {
@@ -9,7 +6,7 @@ namespace Application
         static void Main()
         {
             ApplicationConfiguration.Initialize();
-            System.Windows.Forms.Application.Run(new Form1());
+            System.Windows.Forms.Application.Run(new Root());
         }
     }
 }

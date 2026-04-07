@@ -3,7 +3,7 @@
     public class Player
     {
         public string Name { get; }
-        public List<Card> Deck { get; } = new List<Card>();
+        public List<Card> Deck { get; } = [];
 
         public Player(string name)
         {
