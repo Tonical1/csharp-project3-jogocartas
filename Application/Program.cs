@@ -1,21 +1,12 @@
-//using GameLib;
-
-namespace Application
+﻿namespace Application
 {
     internal static class Program
     {
-        //private static Core core = new Core();
-
-        /// <summary>
-        ///  The main entry point for the application.
-        /// </summary>
         [STAThread]
         static void Main()
         {
-            // To customize application configuration such as set high DPI settings or default font,
-            // see https://aka.ms/applicationconfiguration.
             ApplicationConfiguration.Initialize();
-            System.Windows.Forms.Application.Run(new GameWindow());
+            System.Windows.Forms.Application.Run(new Root());
         }
     }
 }
