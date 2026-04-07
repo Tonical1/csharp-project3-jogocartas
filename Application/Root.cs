@@ -1,5 +1,6 @@
 ﻿using Microsoft.Web.WebView2.WinForms;
 using System;
+using System.Diagnostics;
 using System.IO;
 using System.Windows.Forms;
 using GameLib;
@@ -25,24 +26,23 @@ namespace Application
             {
                 Dock = DockStyle.Fill
             };
+
             Controls.Add(webView);
 
             await webView.EnsureCoreWebView2Async(null);
             webView.CoreWebView2.AddHostObjectToScript("game", new Core());
 
-            // Caminho físico para a pasta do projeto
-            string projectDir = AppDomain.CurrentDomain.BaseDirectory;
+            string htmlPath = Path.Combine(AppDomain.CurrentDomain.BaseDirectory, "index.html");
 
-            // Registra a pasta virtual "app" para acessar arquivos locais
-            webView.CoreWebView2.SetVirtualHostNameToFolderMapping(
-                "app.local",           // host virtual
-                projectDir,            // pasta física
-                Microsoft.Web.WebView2.Core.CoreWebView2HostResourceAccessKind.Allow
-            );
+            if (File.Exists(htmlPath))
+                webView.CoreWebView2.Navigate(htmlPath);
+            else
+                webView.NavigateToString("<h1>HTML NÃO ENCONTRADO</h1>");
+        }
 
-            // Agora podemos navegar usando URL virtual
-            string url = "https://app.local/index.html";
-            webView.CoreWebView2.Navigate(url);
+        private void InitializeComponent()
+        {
+
         }
     }
 }
